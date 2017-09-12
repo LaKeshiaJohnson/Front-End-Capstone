@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MedsList">
 <head>
 	<title>Meds List</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+	<div ng-include="'partials/nav.html'"></div>
+	<br>
+	<br>
 
+	<!-- ///////////CONTAINER START/////////// -->
+    <main>
+
+        <div ng-view class="container">
+
+        </div>
+
+    </main>
+
+
+    <!-- ///////////FOOTER START/////////// -->
+    <br>
+    <br>
+    <br>
+    <footer class="footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <p id="copy-footer">© 2017 </p>
+            </div>
+        </div>
+    </footer>
+
+	<!-- *****SCRIPTS***** -->
+
+    <!-- JQUERY -->
+    <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+    
+    <!-- ANGULAR -->
+    <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    <!-- FIREBASE -->
+    <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
+    <!-- JAVASCRIPTS -->
+    <script src="./app/app.js"></script>
+    <script src="./app/creds/fb-creds.js"></script>
+   <!--  FACTORIES -->
+    <script src="./app/factories/auth-factory.js"></script>
+    <script src="./app/factories/user-factory.js"></script>
+   <!--  <script src="./app/factories/filter-factory.js"></script> -->
+    <!-- CONTROLLERS -->
+    <script src="./app/controllers/auth-ctrl.js"></script>
+    <script src="./app/controllers/nav-ctrl.js"></script>
 </body>
 </html>

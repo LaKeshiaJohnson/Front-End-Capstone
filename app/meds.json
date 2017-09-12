@@ -1,0 +1,65 @@
+{
+    "list": {
+        "-Ksz51q_BB5x_SlNuqdO": {
+            "title": "LIST Title 1",
+            "uid": "KGCIrcyxnMSXXp1ayKpXnRGOoUB3"
+        },
+        "-KszD5oWTGIVFVQtNeeS": {
+            "title": "LIST Title 2",
+            "uid": "BTdU2dvyLXafsVeIvm8dcDc8Wp23"
+        },
+        "-KtEcsfJ1AnWdMoikza8": {
+            "title": "LIST Title 3",
+            "uid": "VBguQouztVh5mHOcjjIGjl02scq1"
+        }
+    },
+    "meds": {
+        "-KszuqdO": {
+            "uid": "KGCIrcyxnMSXXp1ayKpXnRGOoUB3",
+            "medname": "medname1",
+            "dose": "200mg",
+            "prescribedby": "dr.who",
+            "reason": "back",
+            "directions": "take 1 daily",
+            "notes": "",
+            "startamount": "",
+            "listid": "-Ksz51q_BB5x_SlNuqdO"
+        },
+        "-KszD5tNeeS": {
+            "uid": "BTdU2dvyLXafsVeIvm8dcDc8Wp23",
+            "medname": "medname2",
+            "dose": "300mg",
+            "prescribedby": "dr.yay",
+            "reason": "leg pain",
+            "directions": "take 2 tablets in the morning",
+            "notes": "do not take on empty stomach",
+            "startamount": "",
+            "listid": "-KszD5oWTGIVFVQtNeeS"
+        },
+        "-KtEikza8": {
+            "uid": "VBguQouztVh5mHOcjjIGjl02scq1",
+            "medname": "medname3",
+            "dose": "",
+            "prescribedby": "dr.pain",
+            "reason": "blah",
+            "directions": "take as needed",
+            "notes": "doesn't work",
+            "startamount": "",
+            "listid": "-KtEcsfJ1AnWdMoikza8"
+        }
+    },
+    "users": {
+        "1": {
+            "uid": "KGCIrcyxnMSXXp1ayKpXnRGOoUB3",
+            "email": ""
+        },
+        "2": {
+            "uid": "BTdU2dvyLXafsVeIvm8dcDc8Wp23",
+            "email": ""
+        },
+        "3": {
+            "uid": "VBguQouztVh5mHOcjjIGjl02scq1",
+            "email": ""
+        }
+    }
+}

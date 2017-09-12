@@ -1,0 +1,21 @@
+<div class="authBox">
+  <div class="">
+    <h4>Login with Google</h4>
+    <button ng-click="loginGoogle()" class="loginbtn">Sign In with Google</button>
+  </div>
+  <div class="">
+    <section class="auth-form">
+      <h4>Login/Register with Email</h4>
+      <div>
+        Email: <input type="text" autofocus="true" ng-model="account.email">
+      </div>
+      <div>
+        Password: <input type="password" ng-model="account.password">
+      </div>
+      <div>
+        <button ng-click="login()" class="loginbtn">Login</button>
+        <button ng-click="register()" class="loginbtn">Register</button>
+      </div>
+    </section>
+  </div>
+</div>
