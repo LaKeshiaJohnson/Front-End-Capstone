@@ -1,0 +1,7 @@
+<nav class="" ng-controller="navCtrl">
+	<ul>
+  	<li><a ng-show="!isLoggedIn">Login</a></li>
+  	<li><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
+  	<li><a ng-show="isLoggedIn" ng-href="#!/all-lists">View All Lists</a></li>
+	</ul>
+</nav>
