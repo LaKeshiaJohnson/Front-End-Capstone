@@ -7,7 +7,9 @@ app.controller("listCtrl", function ($scope, $route, authFactory, dostuffFactory
 	let user = authFactory.getCurrentUser();
 
 	const showAllLists = function () {
+		console.log("user is: ", authFactory.getCurrentUser());
 		dostuffFactory.getAllLists(user)
+
 		.then((list) => {
 			console.log("show all user lists:", list);
 			$scope.list = list;

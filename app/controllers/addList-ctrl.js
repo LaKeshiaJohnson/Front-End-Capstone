@@ -15,7 +15,7 @@ app.controller("addListCtrl", function($scope, dostuffFactory, authFactory, $loc
 	$scope.submitList = function () {
 		dostuffFactory.addNewList($scope.list)
 			.then((data) => {
-				$location.url("#!/");
+				$location.url("/all-lists"); //"#!""
 				$route.reload();
 			});
 	};

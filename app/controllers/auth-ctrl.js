@@ -35,7 +35,7 @@ $scope.account = {
             .then((result) => {
                 let user = result.user.uid;
                 console.log("USER:", user);
-                $location.path("/all-lists");
+                $location.path("#!/all-lists");
                 $scope.apply();
             }).catch((error) => {
                 console.log("error with google login");

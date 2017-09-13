@@ -1,8 +1,11 @@
 <h1>My Lists</h1>
 
 <div ng-repeat="item in list">
-<p>{{list.title}}</p>
+<!-- <p>{{item.title}}</p> -->
+<div><a ng-href="#!/med/{{item.id}}">{{item.title}}</a></div>
 </div>
+
+
 <!-- <div class="card" style="width: 20rem;">
   <div class="card-body">
     <h4 class="card-title"><a ng-href="#!/meds/{{item.id}}">{{item.title}}</a></h4>

@@ -35,7 +35,7 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 		});
 	};
 
-	const getListName = function(listId) {
+/*	const getListName = function(listId) {
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/list/${listId}.json`)
                 .then((listInfo) => {
@@ -49,7 +49,7 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
                     reject(error);
                 });
         });
-    };
+    };*/
 
 
 	/*const getAllMeds = function(user) {
@@ -94,6 +94,6 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 
 
 
-return {getAllLists, addNewList, getListName};
+return {getAllLists, addNewList};
 
 });
