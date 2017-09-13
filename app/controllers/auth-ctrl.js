@@ -22,6 +22,7 @@ $scope.account = {
 	};
 
 	$scope.logIn = () => {
+		console.log("you clicked on the login button");
 		authFactory.logIn($scope.account)
 		.then ( () => {
 			$window.location.href = "#!/all-lists";
