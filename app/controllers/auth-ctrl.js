@@ -25,7 +25,9 @@ $scope.account = {
 		console.log("you clicked on the login button");
 		authFactory.logIn($scope.account)
 		.then ( () => {
-			$window.location.href = "#!/all-lists";
+			//$window.location.href = "#!/all-lists";
+			$location.path("#!/all-lists");
+                //$scope.apply();
 		});
 	};
 
@@ -34,7 +36,7 @@ $scope.account = {
         authFactory.authWithProvider()
             .then((result) => {
                 let user = result.user.uid;
-                console.log("USER:", user);
+                //console.log("USER:", user);
                 $location.path("#!/all-lists");
                 $scope.apply();
             }).catch((error) => {

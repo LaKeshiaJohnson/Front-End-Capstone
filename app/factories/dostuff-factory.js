@@ -35,6 +35,18 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 		});
 	};
 
+	const deleteList = function(listId) {
+        return $q((resolve, reject) => {
+            $http.delete(`${FBCreds.databaseURL}/list/${listId}.json`)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
 /*	const getListName = function(listId) {
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/list/${listId}.json`)
@@ -94,6 +106,6 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 
 
 
-return {getAllLists, addNewList};
+return {getAllLists, addNewList, deleteList};
 
 });
