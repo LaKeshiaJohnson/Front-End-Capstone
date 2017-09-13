@@ -22,6 +22,7 @@ $scope.account = {
 	};
 
 	$scope.logIn = () => {
+		console.log("you clicked on the login button");
 		authFactory.logIn($scope.account)
 		.then ( () => {
 			$window.location.href = "#!/all-lists";
@@ -34,7 +35,7 @@ $scope.account = {
             .then((result) => {
                 let user = result.user.uid;
                 console.log("USER:", user);
-                $location.path("/all-lists");
+                $location.path("#!/all-lists");
                 $scope.apply();
             }).catch((error) => {
                 console.log("error with google login");

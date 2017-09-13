@@ -1,0 +1,11 @@
+<h3>{{title}}</h3>
+
+<form>
+	<div class="form-group row">
+      <div class="col-md-6">
+    <label for="title">List Title:</label>
+        <input type="text" class="form-control" id="listname" ng-model="list.title">
+      </div>
+      <button ng-click="submitList()" class="btn btn-default">{{submitButtonText}}</button>
+  </div>
+ </form>

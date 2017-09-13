@@ -9,6 +9,7 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
 			firebase.auth().onAuthStateChanged((user) => {
 				if (user) {
 					currentUser = user.uid;
+                    console.log("user", user.id);
 					addNewUserObj.push({
 						userEmail: user.email
 					});
