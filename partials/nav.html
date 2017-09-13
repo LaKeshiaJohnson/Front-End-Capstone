@@ -1,7 +1,23 @@
-<nav class="" ng-controller="navCtrl">
+<!-- <nav class="" ng-controller="navCtrl">
 	<ul>
   	<li><a ng-show="!isLoggedIn">Login</a></li>
   	<li><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
   	<li><a ng-show="isLoggedIn" ng-href="#!/all-lists">View All Lists</a></li>
 	</ul>
+</nav> -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="navCtrl">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ng-show="!isLoggedIn">Login</a></li>
+  	<li><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
+  	<li><a ng-show="isLoggedIn" ng-href="#!/all-lists">View All Lists</a></li>
+    </ul>
+  </div>
 </nav>
