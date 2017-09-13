@@ -1,7 +1,7 @@
 "use strict";
 console.log("add list controller is loading");
 
-app.controller("addListCtrl", function($scope, userListFactory, authFactory, $location, $route) {
+app.controller("addListCtrl", function($scope, dostuffFactory, authFactory, $location, $route) {
 
 	$scope.title = "New Medication List";
 	$scope.submitButtonText = "Add New List";
@@ -13,10 +13,10 @@ app.controller("addListCtrl", function($scope, userListFactory, authFactory, $lo
 	};
 
 	$scope.submitList = function () {
-		UserList.addNewList($scope.list)
+		dostuffFactory.addNewList($scope.list)
 			.then((data) => {
 				$location.url("#!/");
-				$route.reload()
+				$route.reload();
 			});
 	};
 

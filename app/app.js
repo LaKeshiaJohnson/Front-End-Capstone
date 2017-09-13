@@ -20,8 +20,8 @@ let isAuth = (authFactory) => new Promise ((resolve, reject) => {
 app.config(($routeProvider) => {
 	$routeProvider
 	.when('/', {
-		templateUrl: 'patrials/allLists.html',
-		controller: "",
+		templateUrl: 'partials/allLists.html',
+		controller: "listCtrl",
 			resolve: {isAuth}
 	})
 	.when('/login', {
@@ -30,8 +30,13 @@ app.config(($routeProvider) => {
 	})
 	.when('/all-lists', {
 		templateUrl: 'partials/allLists.html',
-		controller: "",
+		controller: "listCtrl",
 		reslove: {isAuth}
+	})
+	.when('/new-list', {
+		templateUrl: 'partials/newList.html',
+		controller: "addListCtrl",
+		resolve: {isAuth}
 	})
 	.otherwise('/');
 });
