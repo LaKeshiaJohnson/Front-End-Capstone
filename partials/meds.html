@@ -1,0 +1,18 @@
+<h1>Medications</h1>
+
+
+<div ng-repeat="item in list">
+<!-- <p>{{item.title}}</p> -->
+<div>{{item.title}}</div>
+</div>
+
+<a ng-href="#!/add-med"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
+
+<div ng-repeat="med in list">
+<h3>{{med.medname}}</h3>
+<h3>{med.dose}}</h3> 
+<p>{{med.prescribedby}}
+<p>{{med.reason}}</p>
+<p>{{med.directions}}</p>
+<p>{{med.notes}}</p>
+</div>

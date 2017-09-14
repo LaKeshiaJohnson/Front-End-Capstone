@@ -38,6 +38,16 @@ app.config(($routeProvider) => {
 		controller: "addListCtrl",
 		resolve: {isAuth}
 	})
+	.when('/meds/:itemId', {
+		templateUrl: 'partials/meds.html',
+		controller: "medsCtrl",
+		resolve: {isAuth}
+	})
+	.when('/add-med', {
+		templateUrl: 'partials/newMed.html',
+		controller: "addMedCtrl",
+		resolve: {isAuth}
+	})
 	.otherwise('/');
 });
 

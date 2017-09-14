@@ -1,5 +1,5 @@
 "use strict";
-
+console.log("show stuff controller");
 app.controller("getStuffCtrl", function($scope, dostuffFactory) {
 
 

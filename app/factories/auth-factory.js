@@ -9,7 +9,7 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
 			firebase.auth().onAuthStateChanged((user) => {
 				if (user) {
 					currentUser = user.uid;
-                    console.log("user", user.id);
+                    //console.log("user", user.id);
 					addNewUserObj.push({
 						userEmail: user.email
 					});
@@ -56,7 +56,7 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
                 let newObj = JSON.stringify(addNewUsertoFB);
                 return $http.post(`${FBCreds.databaseURL}/users.json`, newObj)
                     .then((data) => {
-                        console.log("data", data);
+                        //console.log("data", data);
                         return data;
                     }, (error) => {
                         let errorCode = error.code;
