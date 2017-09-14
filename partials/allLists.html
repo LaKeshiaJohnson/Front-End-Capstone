@@ -2,7 +2,7 @@
 
 <div ng-repeat="item in list">
 <!-- <p>{{item.title}}</p> -->
-<div><a ng-href="#!/med/{{item.id}}">{{item.title}}</a></div>
+<div><a ng-href="#!/med/{{item.id}}">{{item.title}}</a></div><span class="glyphicon glyphicon-trash" ng-click="deleteList(item.id)"></span>
 </div>
 
 
