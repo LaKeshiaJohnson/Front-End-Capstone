@@ -28,6 +28,22 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
             });
     };
 
-
+$scope.medsInList = [];
+    const showListwMeds = function () {
+        dostuffFactory.getMedsInList($routeParams.itemId)
+            .then((data) => {
+                $scope.medsInList = data;
+                $scope.medsInList.id = $routeParams.itemId;
+                console.log("itemId", data);
+            })
+            .then(() => {
+                dostuffFactory.getListName($routeParams.itemId)
+                    .then((medsList) => {
+                        $scope.allMedsListNames = medsList;
+                        console.log("$scope.allMedsListNames", $scope.allMedsListNames);
+                    });
+            });
+    };
+showListwMeds();
 
 });

@@ -1,4 +1,5 @@
 "use strict";
+/*DONT NEED THIS CTRL*/
 console.log("show stuff controller");
 app.controller("getStuffCtrl", function($scope, dostuffFactory) {
 
