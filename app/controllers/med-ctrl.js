@@ -1,4 +1,4 @@
-"use strict";
+/*"use strict";
 
 app.controller("medsCtrl", function ($scope, $routeParams, dostuffFactory, $route, $q, $http, FBCreds) {
 
@@ -36,4 +36,4 @@ app.controller("medsCtrl", function ($scope, $routeParams, dostuffFactory, $rout
 
 
     showListwMeds();
-});
+});*/
