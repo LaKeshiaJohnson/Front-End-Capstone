@@ -44,6 +44,14 @@ $scope.medsInList = [];
                     });
             });
     };
+
+    $scope.deleteMed = function(itemId){
+        dostuffFactory.deleteSingleMed(itemId)
+        .then((irrelevant) => {
+            showListwMeds();
+        });
+    };
+
 showListwMeds();
 
 });

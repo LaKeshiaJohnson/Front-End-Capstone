@@ -1,38 +1,32 @@
 <h1>Medications</h1>
 
+
 <a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
 
-<!-- <h3>{{title}}</h3>
 
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input type="input" class="form-control" id="" ng-model="meds.medname" placeholder="Medication Name">
-    </div>
-    <div class="form-group col-md-6">
-      <input type="input" class="form-control" id="" ng-model="meds.dose" placeholder="Dose">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input type="input" class="form-control" id="" ng-model="meds.prescribedby" placeholder="Prescribed by">
-    </div>
-    <div class="form-group col-md-6">
-      <input type="input" class="form-control" id="" ng-model="meds.reason" placeholder="Reason for taking">
-    </div>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="" ng-model="meds.directions" placeholder="Directions">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="" ng-model="meds.notes" placeholder="Special Notes">
-  </div>
-  
-  
-  <button ng-click="submitMed()" class="btn btn-primary">{{submitButtonText}}</button>
-</form> -->
+<div class="medss" ng-repeat="item in medsInList">
 
-<!-- MODAL -->
+<div class="w3-container" style="width:100%;">
+    <header class="w3-container w3-gray">
+      <h3>{{item.medname}} - {{item.dose}}</h3>
+    </header>
+
+    <div class="w3-container w3-light-grey">
+    <p>Prescribed by: {{item.prescribedby}}</p>
+    <p>Reason: {{item.reason}}</p>
+    <p>Directions: : {{item.directions}}</p>
+    <p>Special Notes: {{item.notes}}</p>
+    </div>
+
+    <footer class="w3-container w3-light-grey">
+      <div><span class="glyphicon glyphicon-trash" ng-click="deleteMed(item.id)"></span></div>
+    </footer>
+
+  </div>
+<br>
+</div>
+
+<!-- ******** MODAL ******** -->
 <div id="id01" class="w3-modal" ng-controller="addMedCtrl">
     <div class="w3-modal-content">
       <div class="w3-container">
@@ -71,18 +65,4 @@
       </div>
     </div>
   </div>
-</div>
-       
-
-
-
-
-<div ng-repeat="item in medsInList">
-
-<h3>{{item.medname}}</h3>
-<h3>{{item.dose}}</h3> 
-<p>{{item.prescribedby}}
-<p>{{item.reason}}</p>
-<p>{{item.directions}}</p>
-<p>{{item.notes}}</p>
 </div>

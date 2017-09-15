@@ -140,6 +140,18 @@ const getSingleMed = function(itemId){
         });
     };
 
-return {getAllLists, addNewList, deleteList, getListName, getMedsInList, addNewMed, getSingleMed};
+    	const deleteSingleMed = function(itemId){
+		return $q((resolve, reject) => {
+			$http.delete(`${FBCreds.databaseURL}/meds/${itemId}.json`)
+			.then((response) => {
+				resolve(response);
+			})
+			.catch((error) => {
+				reject(error);
+			});
+		});
+	};
+
+return {getAllLists, addNewList, deleteList, getListName, getMedsInList, addNewMed, getSingleMed, deleteSingleMed};
 
 });
