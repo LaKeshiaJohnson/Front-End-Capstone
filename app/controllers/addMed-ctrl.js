@@ -15,15 +15,19 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
         prescribedby: "",
         directions: "",
         notes: "",
-        listid: $routeParams.itemId
+        listid: $routeParams.itemId,
+
     };
 
     $scope.submitMed = function() {
-        console.log("hmmm...");
+        //console.log("hmmm...");
         dostuffFactory.addNewMed($scope.meds)
             .then((data) => {
-                $location.url("/meds/:itemId");
+                $location.url("#!/meds/{{item.id}}");
                 $route.reload();
             });
     };
+
+
+
 });

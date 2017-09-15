@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("list controller loading");
+//console.log("list controller loading");
 
 app.controller("listCtrl", function ($scope, $route, authFactory, dostuffFactory) {
 	$scope.list = [];

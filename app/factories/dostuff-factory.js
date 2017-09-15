@@ -1,5 +1,5 @@
 "use strict";
-//console.log("do stuff factory is loading");
+console.log("do stuff factory is loading");
 
 app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 
@@ -9,10 +9,14 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
             $http.get(`${FBCreds.databaseURL}/list.json?orderBy="uid"&equalTo="${user}"`)
                 .then((listObject) => {
                     let listCollection = listObject.data;
+                    console.log("LIST COLLECTION DATA", listCollection);
                     //console.log("listCollection:", listCollection);
                     Object.keys(listCollection).forEach((key) => {
                         listCollection[key].id = key;
                         list.push(listCollection[key]);
+                        //console.log("LIST ARRAY", list);
+                        console.log("", key);
+
                     });
                     resolve(list);
                 })
@@ -47,6 +51,19 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
+    const addNewMed = function(obj) {
+        let newObj = JSON.stringify(obj);
+        return $http.post(`${FBCreds.databaseURL}/meds.json`, newObj)
+            .then((data) => {
+                console.log("data", data);
+                return data;
+            }, (error) => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                console.log("error", errorCode, errorMessage);
+            });
+    };
+  /**********  ABOVE THIS LINE WORKS, BELOW THIS LINE IS A MESS *********/
 	const getListName = function(listId) {
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/list/${listId}.json`)
@@ -82,20 +99,9 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 					reject(error);
 			});
 		});
-	};*/
+	};
+*/
 
-const addNewMed = function(obj) {
-        let newObj = JSON.stringify(obj);
-        return $http.post(`${FBCreds.databaseURL}/meds.json`, newObj)
-            .then((data) => {
-                console.log("data", data);
-                return data;
-            }, (error) => {
-                let errorCode = error.code;
-                let errorMessage = error.message;
-                console.log("error", errorCode, errorMessage);
-            });
-    };
 
 const getMedsInList = function (listId) {
 
@@ -104,6 +110,7 @@ const getMedsInList = function (listId) {
             $http.get(`${FBCreds.databaseURL}/meds.json?orderBy="listid"&equalTo="${listId}"`)
                 .then((medsList) => {
                     let medsListCollection = medsList.data;
+                    console.log("meds list data", medsList.data);
                     let medKeys = Object.keys(medsListCollection);
                     console.log("med KEYS", medKeys);
                     console.log("medsListCollection", medsListCollection);
@@ -121,9 +128,18 @@ const getMedsInList = function (listId) {
     };
 
 
+const getSingleMed = function(itemId){
+        return $q((resolve, reject) =>{
+            $http.get(`${FBCreds.databaseURL}/meds/${itemId}.json`)
+            .then((itemObj) => {
+                resolve(itemObj.data);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+        });
+    };
 
-
-
-return {getAllLists, addNewList, deleteList, getListName, getMedsInList, addNewMed};
+return {getAllLists, addNewList, deleteList, getListName, getMedsInList, addNewMed, getSingleMed};
 
 });

@@ -40,14 +40,14 @@ app.config(($routeProvider) => {
 	})
 	.when('/meds/:itemId', {
 		templateUrl: 'partials/meds.html',
-		controller: "medsCtrl",
-		resolve: {isAuth}
-	})
-	.when('/add-med', {
-		templateUrl: 'partials/newMed.html',
 		controller: "addMedCtrl",
 		resolve: {isAuth}
 	})
+	/*.when('/add-med', {
+		templateUrl: 'partials/med.html',
+		controller: "addMedCtrl",
+		resolve: {isAuth}
+	})*/
 	.otherwise('/');
 });
 

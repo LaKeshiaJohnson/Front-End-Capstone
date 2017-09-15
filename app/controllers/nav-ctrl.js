@@ -1,6 +1,6 @@
 'use strict';
 
- console.log("nav controller loading");
+ //console.log("nav controller loading");
 
 app.controller("navCtrl", function($scope, $window, $routeParams, authFactory){
 
