@@ -1,0 +1,88 @@
+<h1>Medications</h1>
+
+<a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
+
+<!-- <h3>{{title}}</h3>
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="input" class="form-control" id="" ng-model="meds.medname" placeholder="Medication Name">
+    </div>
+    <div class="form-group col-md-6">
+      <input type="input" class="form-control" id="" ng-model="meds.dose" placeholder="Dose">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="input" class="form-control" id="" ng-model="meds.prescribedby" placeholder="Prescribed by">
+    </div>
+    <div class="form-group col-md-6">
+      <input type="input" class="form-control" id="" ng-model="meds.reason" placeholder="Reason for taking">
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="" ng-model="meds.directions" placeholder="Directions">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="" ng-model="meds.notes" placeholder="Special Notes">
+  </div>
+  
+  
+  <button ng-click="submitMed()" class="btn btn-primary">{{submitButtonText}}</button>
+</form> -->
+
+<!-- MODAL -->
+<div id="id01" class="w3-modal" ng-controller="addMedCtrl">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        
+        <h3>{{title}}</h3>
+
+<form>
+  <div class="form-row">
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.medname" placeholder="Medication Name">
+    </div>
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.dose" placeholder="Dose">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.prescribedby" placeholder="Prescribed by">
+    </div>
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.reason" placeholder="Reason for taking">
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="" ng-model="meds.directions" placeholder="Directions">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="" ng-model="meds.notes" placeholder="Special Notes">
+  </div>
+  
+  
+  <button ng-click="submitMed()" class="btn btn-primary">{{submitButtonText}}</button>
+</form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+       
+
+
+
+
+<div ng-repeat="item in medsInList">
+
+<h3>{{item.medname}}</h3>
+<h3>{{item.dose}}</h3> 
+<p>{{item.prescribedby}}
+<p>{{item.reason}}</p>
+<p>{{item.directions}}</p>
+<p>{{item.notes}}</p>
+</div>

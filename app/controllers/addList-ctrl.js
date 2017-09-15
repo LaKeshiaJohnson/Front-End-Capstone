@@ -1,5 +1,5 @@
 "use strict";
-console.log("add list controller is loading");
+//console.log("add list controller is loading");
 
 app.controller("addListCtrl", function($scope, dostuffFactory, authFactory, $location, $route) {
 
