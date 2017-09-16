@@ -31,39 +31,35 @@ app.config(($routeProvider) => {
 	.when('/all-lists', {
 		templateUrl: 'partials/allLists.html',
 		controller: "listCtrl",
-		reslove: {isAuth}
+		resolve: {isAuth}
 	})
-	.when('/new-list', {
-		templateUrl: 'partials/newList.html',
+	.when('/list/:itemId/edit', {
+		templateUrl: 'partials/addList.html',
+		controller: 'editListCtrl',
+		resolve: {isAuth}
+	})
+	.when('/add-list', {
+		templateUrl: 'partials/addList.html',
 		controller: "addListCtrl",
 		resolve: {isAuth}
 	})
+	.when('/add-med', {
+			templateUrl: 'partials/newMed.html',
+			controller: "addMedCtrl",
+			resolve: {isAuth}
+	})
 	.when('/meds/:itemId', {
-		templateUrl: 'partials/meds.html',
-		controller: "addMedCtrl",
+		templateUrl: 'partials/singleList.html',
+		controller: "medCtrl",
 		resolve: {isAuth}
 	})
-	/*.when('/add-med', {
-		templateUrl: 'partials/med.html',
-		controller: "addMedCtrl",
+	.when('/meds/:itemId/edit', {
+		templateUrl: 'partials/editmed.html',
+		controller: "editMedCtrl",
 		resolve: {isAuth}
-	})*/
+	})
 	.otherwise('/');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

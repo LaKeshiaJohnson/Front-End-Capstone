@@ -1,7 +1,8 @@
 <h1>Medications</h1>
 
+<!-- onclick="document.getElementById('id01').style.display='block'" -->
 
-<a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
+<a ng-href="#!/add-med"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
 
 
 <div class="medss" ng-repeat="item in medsInList">
@@ -19,7 +20,11 @@
     </div>
 
     <footer class="w3-container w3-light-grey">
-      <div><span class="glyphicon glyphicon-trash" ng-click="deleteMed(item.id)"></span></div>
+      <div><span class="glyphicon glyphicon-remove" ng-click="deleteMed(item.id)"></span>
+      <!-- <span class="glyphicon glyphicon-edit" ng-href="#!/meds/:itemId/edit"></span> -->
+          
+          <a ng-href="#!/meds/:itemId/edit">Edit Med</a>
+      </div>
     </footer>
 
   </div>
@@ -66,3 +71,5 @@
     </div>
   </div>
 </div>
+
+

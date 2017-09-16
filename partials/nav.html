@@ -5,19 +5,20 @@
   	<li><a ng-show="isLoggedIn" ng-href="#!/all-lists">View All Lists</a></li>
 	</ul>
 </nav> -->
-
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="navCtrl">
+<div id="navwrapper">
+<nav class="navbar navbar-fixed-top" ng-controller="navCtrl">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="#"><img src="app/images/medlist.jpg" width="150" height="50"></a></a>
     </div>
     <ul class="nav navbar-nav">
       
     </ul>
     <ul class="nav navbar-nav navbar-right">
+    <li><a ng-show="isLoggedIn" ng-href="#!/add-list">Add New List</a></li>
+    <li><a ng-show="isLoggedIn" ng-href="#!/all-lists">View All Lists</a></li>
   	<li><a ng-show="isLoggedIn" ng-click="logout()">Logout</a></li>
-    <li><a ng-show="isLoggedIn" ng-href="#!/new-list">Add New List</a></li>
-  	<li><a ng-show="isLoggedIn" ng-href="#!/all-lists">View All Lists</a></li>
     </ul>
   </div>
 </nav>
+</div>

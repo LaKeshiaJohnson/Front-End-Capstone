@@ -1,48 +1,35 @@
+/* red #d76b73 */
+
 body {margin:0;}
 
 main {
     margin: 80px 0 50px 50px;
 }
 
-/*
-ul {
-    list-style-type: none;
+.navbar-brand {
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-li {
-    float: right;
+    padding: 0 0 0 10px;
 
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.navbar-nav>li>a:hover{
+    background-color: #74aedb;
 }
 
-li a:hover {
-    background-color: grey;
+#navwrapper {
+    height: 65px;
+    border-bottom: solid 15px #74aedb;
 }
-*/
 
 .footer {
-background-color: #333;
+background-color: #74aedb;
     
 }
 
 #copy-footer {
     color: white;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1em;
+    font-weight: normal;
     text-align: center;
 
 }

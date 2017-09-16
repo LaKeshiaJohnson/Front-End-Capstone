@@ -1,0 +1,32 @@
+
+<h3>{{title}}</h3>
+
+
+<form>
+  <div class="form-row">
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.medname" placeholder="">
+    </div>
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.dose">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.prescribedby">
+    </div>
+    <div class="form-group">
+      <input type="input" class="form-control" id="" ng-model="meds.reason">
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="" ng-model="meds.directions">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="" ng-model="meds.notes">
+  </div>
+  
+  
+  <button ng-click="editThisMed()" class="btn btn-primary">{{submitButtonText}}</button>
+</form>
+
