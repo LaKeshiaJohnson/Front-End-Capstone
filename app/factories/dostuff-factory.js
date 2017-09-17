@@ -3,7 +3,7 @@ console.log("do stuff factory is loading");
 
 app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 
-	const getAllLists = function(user) {
+	/*const getAllLists = function(user) {
         let list = [];
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/list.json?orderBy="uid"&equalTo="${user}"`)
@@ -49,7 +49,7 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
                     reject(error);
                 });
         });
-    };
+    };*/
 
     const addNewMed = function(obj) {
         let newObj = JSON.stringify(obj);
@@ -64,7 +64,7 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
             });
     };
   /**********  ABOVE THIS LINE WORKS, BELOW THIS LINE IS A MESS *********/
-	const getListName = function(listId) {
+/*	const getListName = function(listId) {
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/list/${listId}.json`)
                 .then((listInfo) => {
@@ -79,7 +79,7 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
                 });
         });
     };
-
+*/
 
 /*	const getAllMeds = function(user) {
 		let meds = [];
@@ -110,10 +110,10 @@ const getMedsInList = function (listId) {
             $http.get(`${FBCreds.databaseURL}/meds.json?orderBy="listid"&equalTo="${listId}"`)
                 .then((medsList) => {
                     let medsListCollection = medsList.data;
-                    console.log("meds list data", medsList.data);
+                    //console.log("meds list data", medsList.data);
                     let medKeys = Object.keys(medsListCollection);
-                    console.log("med KEYS", medKeys);
-                    console.log("medsListCollection", medsListCollection);
+                    //console.log("med KEYS", medKeys);
+                    //console.log("medsListCollection", medsListCollection);
                     Object.keys(medsListCollection).forEach((key) => {
                         medsListCollection[key].id = key;
                         medsInList.push(medsListCollection[key]);
@@ -152,6 +152,21 @@ const getSingleMed = function(itemId){
 		});
 	};
 
-return {getAllLists, addNewList, deleteList, getListName, getMedsInList, addNewMed, getSingleMed, deleteSingleMed};
+console.log("blah blah blah blah");
+	const editMed = function(id, obj) {
+        console.log("id and obj to update", id, obj);
+        return $q((resolve, reject) => {
+            let newObj = JSON.stringify(obj);
+            $http.patch(`${FBCreds.databaseURL}/meds/:itemId.json`, newObj)
+            .then((data) => {
+                resolve(data);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+        });
+    };
+
+return {getMedsInList, addNewMed, getSingleMed, deleteSingleMed, editMed};
 
 });

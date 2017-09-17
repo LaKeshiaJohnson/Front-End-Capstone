@@ -2,14 +2,13 @@
 
 //console.log("list controller loading");
 
-app.controller("listCtrl", function ($scope, $route, authFactory, dostuffFactory) {
+app.controller("listCtrl", function ($scope, $route, authFactory, listFactory) {
 	$scope.list = [];
 	let user = authFactory.getCurrentUser();
 
 	const showAllLists = function () {
 		//console.log("user is: ", authFactory.getCurrentUser());
-		dostuffFactory.getAllLists(user)
-
+		listFactory.getAllLists(user)
 		.then((list) => {
 			console.log("show all user lists:", list);
 			$scope.list = list;
@@ -17,7 +16,7 @@ app.controller("listCtrl", function ($scope, $route, authFactory, dostuffFactory
 	};
 
 	$scope.deleteList = function (listId) {
-		dostuffFactory.deleteList(listId)
+		listFactory.deleteList(listId)
 		.then( () => {
 			$route.reload();
 		});

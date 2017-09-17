@@ -2,7 +2,7 @@
 
 app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFactory, authFactory, $route) {
 
-    $scope.title = "New Medication";
+    $scope.title = "Add New Medication";
     $scope.submitButtonText = "Add";
 
     let user = authFactory.getCurrentUser();
@@ -28,7 +28,7 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
             });
     };
 
-$scope.medsInList = [];
+/*$scope.medsInList = [];
     const showListwMeds = function () {
         dostuffFactory.getMedsInList($routeParams.itemId)
             .then((data) => {
@@ -40,7 +40,7 @@ $scope.medsInList = [];
                 dostuffFactory.getListName($routeParams.itemId)
                     .then((medsList) => {
                         $scope.allMedsListNames = medsList;
-                        console.log("$scope.allMedsListNames", $scope.allMedsListNames);
+                        //console.log("$scope.allMedsListNames", $scope.allMedsListNames);
                     });
             });
     };
@@ -52,6 +52,6 @@ $scope.medsInList = [];
         });
     };
 
-showListwMeds();
+showListwMeds();*/
 
 });
