@@ -29,7 +29,8 @@ const showEditMed = function(){
     };
 
             //aka submit edited medication
-    $scope.editThisMed = function(){
+    $scope.editThisMed = function(event){
+        console.log("click event function", event);
         dostuffFactory.editMed($routeParams.itemId, $scope.meds)
         .then((data) => {
             //$location.url("#!/meds/:itemId");

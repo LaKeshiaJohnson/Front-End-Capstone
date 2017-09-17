@@ -2,9 +2,11 @@
 
 //console.log("list controller loading");
 
-app.controller("listCtrl", function ($scope, $route, authFactory, listFactory) {
+app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, dostuffFactory, filterFactory) {
 	$scope.list = [];
 	let user = authFactory.getCurrentUser();
+	//$rootScope.showSearch = true;
+    //$scope.searchText = filterFactory;
 
 	const showAllLists = function () {
 		//console.log("user is: ", authFactory.getCurrentUser());
