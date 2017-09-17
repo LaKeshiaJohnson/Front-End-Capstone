@@ -1,14 +1,23 @@
-/* red #d76b73 */
+/* red #d76b73
+    blue #74a3db
+ */
 
 body {margin:0;}
 
 main {
-    margin: 80px 0 50px 50px;
+    margin: 80px 0 30px 30px;
+    font-size: 18px;
 }
 
 .navbar-brand {
     margin: 0;
-    padding: 0 0 0 10px;
+    padding: 0 0 0px 10px;
+
+}
+
+.container-fluid{
+    background-color: white;
+    border-bottom: solid 15px #74aedb;
 
 }
 
@@ -16,10 +25,17 @@ main {
     background-color: #74aedb;
 }
 
-#navwrapper {
+.navbar-nav>li>a:active {
+background-color: #74aedb;
+    
+}
+/*
+ #navwrapper {
     height: 65px;
     border-bottom: solid 15px #74aedb;
+    position: fixed;
 }
+*/
 
 .footer {
 background-color: #74aedb;

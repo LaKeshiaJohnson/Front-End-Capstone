@@ -1,11 +1,15 @@
-<h1>Medications</h1>
-
-<!-- onclick="document.getElementById('id01').style.display='block'" -->
-
-<a ng-href="#!/add-med"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
+<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" ng-model="searchText">
 
 
-<div class="medss" ng-repeat="item in medsInList">
+<h2>List Title Here</h2>
+
+
+<a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
+
+<!-- <a ng-href="#!/add-med"><span class="glyphicon glyphicon-plus"> Add Medication</span></a> -->
+
+
+<div class="medss" ng-repeat="item in medsInList | filter: searchText">
 
 <div class="w3-container" style="width:100%;">
     <header class="w3-container w3-gray">
