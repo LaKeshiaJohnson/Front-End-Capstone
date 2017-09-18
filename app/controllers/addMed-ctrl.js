@@ -28,7 +28,7 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
                 dostuffFactory.editMed(data.data.name, $scope.meds)
             .then((taco) => {
                 // $location.url(`#!/meds/${$scope.meds.listid}`);
-                // $route.reload();
+                 $route.reload();
             });
                 
             });

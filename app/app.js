@@ -44,7 +44,7 @@ app.config(($routeProvider) => {
 		resolve: {isAuth}
 	})
 	/*.when('/add-med', {
-			templateUrl: 'partials/newMed.html',
+			templateUrl: 'partials/addMed.html',
 			controller: "addMedCtrl",
 			resolve: {isAuth}
 	})*/
@@ -53,7 +53,7 @@ app.config(($routeProvider) => {
 		controller: "medCtrl",
 		resolve: {isAuth}
 	})
-	.when('/meds/:itemId/edit', {
+	.when('/meds/:medId/edit', {
 		templateUrl: 'partials/editmed.html',
 		controller: "editMedCtrl",
 		resolve: {isAuth}
