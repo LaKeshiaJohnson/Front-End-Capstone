@@ -36,8 +36,9 @@ showEditMed();
         dostuffFactory.editMed($routeParams.medId, $scope.meds)
         .then((data) => {
             //$location.url("#!/meds/:itemId");
-            $location.path("#!/meds/{{item.id}}");
+            $location.path("#!/meds/:itemid");
             //$route.reload();
+
         });
 
     };
