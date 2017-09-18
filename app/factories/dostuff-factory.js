@@ -1,61 +1,13 @@
 "use strict";
-console.log("do stuff factory is loading");
+//console.log("do stuff factory is loading");
 
 app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
-
-	/*const getAllLists = function(user) {
-        let list = [];
-        return $q((resolve, reject) => {
-            $http.get(`${FBCreds.databaseURL}/list.json?orderBy="uid"&equalTo="${user}"`)
-                .then((listObject) => {
-                    let listCollection = listObject.data;
-                    console.log("LIST COLLECTION DATA", listCollection);
-                    //console.log("listCollection:", listCollection);
-                    Object.keys(listCollection).forEach((key) => {
-                        listCollection[key].id = key;
-                        list.push(listCollection[key]);
-                        //console.log("LIST ARRAY", list);
-                        console.log("", key);
-
-                    });
-                    resolve(list);
-                })
-                .catch((error) => {
-                    reject(error);
-                });
-        });
-    };
-
-    const addNewList = function(obj) {
-		let newObj = JSON.stringify(obj);
-		return $http.post(`${FBCreds.databaseURL}/list.json`, newObj)
-		.then ( (data) => {
-			//console.log("list data:", data);
-			return data;
-		}, (error) => {
-			let errorCode = error.code;
-            let errorMessage = error.message;
-            console.log("error", errorCode, errorMessage);
-		});
-	};
-
-	const deleteList = function(listId) {
-        return $q((resolve, reject) => {
-            $http.delete(`${FBCreds.databaseURL}/list/${listId}.json`)
-                .then((response) => {
-                    resolve(response);
-                })
-                .catch((error) => {
-                    reject(error);
-                });
-        });
-    };*/
 
     const addNewMed = function(obj) {
         let newObj = JSON.stringify(obj);
         return $http.post(`${FBCreds.databaseURL}/meds.json`, newObj)
             .then((data) => {
-                console.log("data", data);
+                //console.log("data", data);
                 return data;
             }, (error) => {
                 let errorCode = error.code;
@@ -63,44 +15,6 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
                 console.log("error", errorCode, errorMessage);
             });
     };
-  /**********  ABOVE THIS LINE WORKS, BELOW THIS LINE IS A MESS *********/
-/*	const getListName = function(listId) {
-        return $q((resolve, reject) => {
-            $http.get(`${FBCreds.databaseURL}/list/${listId}.json`)
-                .then((listInfo) => {
-                    let listInfoCollection = listInfo.data;
-                   // console.log("listInfoCollection", listInfoCollection);
-                    let singleListName = listInfoCollection.title;
-                    console.log("singleListName:", singleListName);
-                    resolve(singleListName);
-                })
-                .catch((error) => {
-                    reject(error);
-                });
-        });
-    };
-*/
-
-/*	const getAllMeds = function(user) {
-		let meds = [];
-		console.log("url is:", `${FBCreds.databaseURL}/meds.json?orderBy="uid"&equalTo="${user}"`);
-		return $q( (resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}/meds.json?orderBy="uid"&equalTo="${user}"`)
-			.then(medObject) => {
-				let medCollection = medObject.data;
-				console.log("medCollection: ", medCollection);
-				Object.keys(medCollection).forEach((key) => {
-					medCollection[key].id = key;
-					meds.push(medCollection[key]);
-				});
-				resolve(meds);
-				}
-				.catch((error) => {
-					reject(error);
-			});
-		});
-	};
-*/
 
 
 const getMedsInList = function (listId) {
@@ -118,7 +32,7 @@ const getMedsInList = function (listId) {
                         medsListCollection[key].id = key;
                         medsInList.push(medsListCollection[key]);
                     });
-                    console.log("medsInList", medsInList);
+                    //console.log("medsInList", medsInList);
                     resolve(medsInList);
                 })
                 .catch((error) => {
@@ -152,12 +66,11 @@ const getSingleMed = function(itemId){
 		});
 	};
 
-console.log("blah blah blah blah");
-	const editMed = function(id, obj) {
-        console.log("id and obj to update", id, obj);
+	const editMed = function(medId, obj) {
+        console.log("id and obj to update", medId, obj);
         return $q((resolve, reject) => {
-            let newObj = JSON.stringify(obj);
-            $http.patch(`${FBCreds.databaseURL}/meds/:itemId.json`, newObj)
+            let newObj = angular.toJson(obj);
+            $http.patch(`${FBCreds.databaseURL}/meds/${medId}.json`, newObj)
             .then((data) => {
                 resolve(data);
             })

@@ -23,8 +23,14 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
         //console.log("hmmm...");
         dostuffFactory.addNewMed($scope.meds)
             .then((data) => {
-                $location.url("#!/meds/{{item.id}}");
-                $route.reload();
+                console.log("DATA from add med ctrl", data);
+                $scope.meds.id = data.data.name;
+                dostuffFactory.editMed(data.data.name, $scope.meds)
+            .then((taco) => {
+                // $location.url(`#!/meds/${$scope.meds.listid}`);
+                 $route.reload();
+            });
+                
             });
     };
 

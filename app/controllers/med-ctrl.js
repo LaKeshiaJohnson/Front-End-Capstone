@@ -8,7 +8,7 @@ $scope.medsInList = [];
             .then((data) => {
                 $scope.medsInList = data;
                 $scope.medsInList.id = $routeParams.itemId;
-                console.log("itemId", data);
+                console.log("itemId from showMedsInList function:", data);
             })
             .then(() => {
                 listFactory.getListName($routeParams.itemId)

@@ -22,7 +22,7 @@ $scope.account = {
 	};
 
 	$scope.logIn = () => {
-		console.log("you clicked on the login button");
+		//console.log("you clicked on the login button");
 		authFactory.logIn($scope.account)
 		.then ( () => {
 			//$window.location.href = "#!/all-lists";
@@ -32,7 +32,7 @@ $scope.account = {
 	};
 
 	 $scope.loginGoogle = () => {
-        console.log("you clicked on google login");
+        //console.log("you clicked on google login");
         authFactory.authWithProvider()
             .then((result) => {
                 let user = result.user.uid;
