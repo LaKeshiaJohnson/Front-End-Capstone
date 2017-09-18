@@ -32,8 +32,7 @@ showEditMed();
 
             // submit edited medication
     $scope.editThisMed = function(){
-        //console.log("valid id2", $routeParams.itemId);
-        //console.log("click event function", event);
+        
         dostuffFactory.editMed($routeParams.medId, $scope.meds)
         .then((data) => {
             //$location.url("#!/meds/:itemId");
