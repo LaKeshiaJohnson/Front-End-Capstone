@@ -3,16 +3,7 @@
 <div ng-repeat="item in list">
 <!-- <p>{{item.title}}</p> -->
 <div class="w3-container w3-white" style="width:100%;"><a ng-href="#!/meds/{{item.id}}">{{item.title}}</a> <span class="glyphicon glyphicon-remove" ng-click="deleteList(item.id)"></span> <a ng-href="#!/list/:itemId/edit">Edit</a></div>
+
 <br>
 </div>
 
-
-<!-- <div class="card" style="width: 20rem;">
-  <div class="card-body">
-    <h4 class="card-title"><a ng-href="#!/meds/{{item.id}}">{{item.title}}</a></h4>
-    <a href="#" class="card-link">Edit Title</a>
-    <a href="#" class="card-link">Delete List</a>
-  </div>
-</div>
-
-</div> -->

@@ -1,5 +1,5 @@
 "use strict";
-console.log("list factory is loading");
+//console.log("list factory is loading");
 
 app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
 
@@ -9,13 +9,12 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
             $http.get(`${FBCreds.databaseURL}/list.json?orderBy="uid"&equalTo="${user}"`)
                 .then((listObject) => {
                     let listCollection = listObject.data;
-                    console.log("LIST COLLECTION DATA", listCollection);
-                    //console.log("listCollection:", listCollection);
+                   // console.log("LIST COLLECTION DATA", listCollection);
                     Object.keys(listCollection).forEach((key) => {
                         listCollection[key].id = key;
                         list.push(listCollection[key]);
                         //console.log("LIST ARRAY", list);
-                        console.log("", key);
+                        //console.log("", key);
 
                     });
                     resolve(list);
@@ -58,7 +57,7 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
                     let listInfoCollection = listInfo.data;
                    // console.log("listInfoCollection", listInfoCollection);
                     let singleListName = listInfoCollection.title;
-                    console.log("singleListName:", singleListName);
+                    //console.log("singleListName:", singleListName);
                     resolve(singleListName);
                 })
                 .catch((error) => {
