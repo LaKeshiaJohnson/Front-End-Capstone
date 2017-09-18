@@ -1,8 +1,18 @@
 /* red #d76b73
-    blue #74a3db
+    blue #74aedb
  */
 
-body {margin:0;}
+body {margin:0;
+background-color: #74aedb ;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#logo {
+    
+    text-align: center;
+}
+
 
 main {
     margin: 80px 0 30px 30px;
@@ -17,18 +27,15 @@ main {
 
 .container-fluid{
     background-color: white;
-    border-bottom: solid 15px #74aedb;
+    border-bottom: solid 15px #d76b73;
 
 }
 
 .navbar-nav>li>a:hover{
-    background-color: #74aedb;
+    background-color: #d76b73;
+    color: black
 }
 
-.navbar-nav>li>a:active {
-background-color: #74aedb;
-    
-}
 /*
  #navwrapper {
     height: 65px;
@@ -36,6 +43,10 @@ background-color: #74aedb;
     position: fixed;
 }
 */
+
+#addtext{
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 .footer {
 background-color: #74aedb;
