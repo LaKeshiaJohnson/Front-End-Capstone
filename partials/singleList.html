@@ -4,7 +4,7 @@
 <h2>List Title Here</h2>
 
 
-<a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"> Add Medication</span></a>
+<a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"></span></a> Add Medication<br><br>
 
 <!-- <a ng-href="#!/add-med"><span class="glyphicon glyphicon-plus"> Add Medication</span></a> -->
 
@@ -12,11 +12,11 @@
 <div class="medss" ng-repeat="item in medsInList | filter: searchText">
 
 <div class="w3-container" style="width:100%;">
-    <header class="w3-container w3-gray">
+    <header class="w3-container w3-light-grey">
       <h3>{{item.medname}} - {{item.dose}}</h3>
     </header>
 
-    <div class="w3-container w3-light-grey">
+    <div class="w3-container w3-white">
     <p>Prescribed by: {{item.prescribedby}}</p>
     <p>Reason: {{item.reason}}</p>
     <p>Directions: : {{item.directions}}</p>
