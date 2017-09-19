@@ -32,7 +32,7 @@ const getMedsInList = function (listId) {
                         medsListCollection[key].id = key;
                         medsInList.push(medsListCollection[key]);
                     });
-                    //console.log("medsInList", medsInList);
+                    console.log("medsInList", medsInList);
                     resolve(medsInList);
                 })
                 .catch((error) => {
@@ -65,6 +65,7 @@ const getSingleMed = function(itemId){
 			});
 		});
 	};
+
 
 	const editMed = function(medId, obj) {
         console.log("id and obj to update", medId, obj);

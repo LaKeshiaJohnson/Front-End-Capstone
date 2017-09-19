@@ -2,7 +2,7 @@
 
 //console.log("list controller loading");
 
-app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, dostuffFactory, filterFactory) {
+app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, dostuffFactory, filterFactory, $location) {
 	$scope.list = [];
 	let user = authFactory.getCurrentUser();
 	//$rootScope.showSearch = true;
@@ -24,7 +24,24 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 		});
 	};
 
+	$scope.deleteListwMeds = function (key) {
+		let theItem = [];
+		let itemDeleting = [];
+		dostuffFactory.getMedsInList(key)
+		.then((item) => {
+			theItem.push(item);
+			theItem.forEach((item) => {
+				itemDeleting.push(item);
+				let uglyId = Object.keys(itemDeleting[0]);
+				uglyId.forEach((item) => {
+					listFactory.deleteListandMeds(item);
+				});
+			});
+		});
+			$location.url("all-lists");
+	}
 
 	showAllLists();
+
 
 });

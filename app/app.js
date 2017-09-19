@@ -42,12 +42,12 @@ app.config(($routeProvider) => {
 		templateUrl: 'partials/addList.html',
 		controller: "addListCtrl",
 		resolve: {isAuth}
-	})
-	/*.when('/add-med', {
+/*	})
+	.when('/list/:itemId/add-med', {
 			templateUrl: 'partials/addMed.html',
 			controller: "addMedCtrl",
-			resolve: {isAuth}
-	})*/
+			resolve: {isAuth}*/
+	})
 	.when('/meds/:itemId', {
 		templateUrl: 'partials/singleList.html',
 		controller: "medCtrl",

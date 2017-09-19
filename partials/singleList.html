@@ -1,13 +1,11 @@
-<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" ng-model="searchText">
+<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" ng-model="searchText"><br>
 
 
-<h2>List Title Here</h2>
+<button onclick="document.getElementById('id01').style.display='block'" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add Medication</button> 
+<button ng-click="" class="btn btn-default">Print</button><br><br>
+<!-- <a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"></span></a> Add Medication<br><br> -->
 
-
-<a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"></span></a> Add Medication<br><br>
-
-<!-- <a ng-href="#!/add-med"><span class="glyphicon glyphicon-plus"> Add Medication</span></a> -->
-
+<center><h1>{{allMedsListNames}}</h1></center>
 
 <div class="medss" ng-repeat="item in medsInList | filter: searchText">
 
@@ -24,10 +22,12 @@
     </div>
 
     <footer class="w3-container w3-light-grey">
-      <div><span class="glyphicon glyphicon-remove" ng-click="deleteMed(item.id)"></span>
+      <div><span class="glyphicon glyphicon-remove" ng-click="deleteListwMeds()"></span>
+      <!-- <div><span class="glyphicon glyphicon-remove" ng-click="deleteMed(item.id)"></span> -->
       <!-- <span class="glyphicon glyphicon-edit" ng-href="#!/meds/:itemId/edit"></span> -->
           
-          <a ng-href="#!/meds/{{item.id}}/edit">Edit Med</a>
+          <a ng-href="#!/meds/{{item.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a>
+
       </div>
     </footer>
 
