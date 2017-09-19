@@ -2,7 +2,10 @@
 
 
 <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add Medication</button> 
-<button ng-click="" class="btn btn-default">Print</button><br><br>
+
+<div ng-controller="addMedCtrl">
+<button ng-click="downloadPDF()" class="btn btn-default">Download PDF</button></div>
+<br><br>
 <!-- <a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"></span></a> Add Medication<br><br> -->
 
 <center><h1>{{allMedsListNames}}</h1></center>

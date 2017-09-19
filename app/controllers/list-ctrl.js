@@ -39,9 +39,8 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 			});
 		});
 			$location.url("all-lists");
-	}
+	};
 
 	showAllLists();
-
 
 });

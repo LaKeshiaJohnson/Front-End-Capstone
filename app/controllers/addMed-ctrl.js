@@ -34,30 +34,12 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
             });
     };
 
-/*$scope.medsInList = [];
-    const showListwMeds = function () {
-        dostuffFactory.getMedsInList($routeParams.itemId)
-            .then((data) => {
-                $scope.medsInList = data;
-                $scope.medsInList.id = $routeParams.itemId;
-                console.log("itemId", data);
-            })
-            .then(() => {
-                dostuffFactory.getListName($routeParams.itemId)
-                    .then((medsList) => {
-                        $scope.allMedsListNames = medsList;
-                        //console.log("$scope.allMedsListNames", $scope.allMedsListNames);
-                    });
-            });
+$scope.downloadPDF = () => {
+    // console.log("$scope.safeList", $scope.safeList);
+   var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
+   
+        pdfMake.createPdf(docDefinition).download('optionalName.pdf');
     };
 
-    $scope.deleteMed = function(itemId){
-        dostuffFactory.deleteSingleMed(itemId)
-        .then((irrelevant) => {
-            showListwMeds();
-        });
-    };
-
-showListwMeds();*/
 
 });
