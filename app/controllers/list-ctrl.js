@@ -40,14 +40,6 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 
 
 
-/*$scope.deleteList = function (listId) {
-		listFactory.deleteList(listId)
-		.then( () => {
-			$route.reload();
-		});
-	};*/
-
-
 /*function myFunction() {
     $window.print();
 }*/
