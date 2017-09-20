@@ -23,7 +23,7 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
         //console.log("hmmm...");
         dostuffFactory.addNewMed($scope.meds)
             .then((data) => {
-                console.log("DATA from add med ctrl", data);
+               // console.log("DATA from add med ctrl", data);
                 $scope.meds.id = data.data.name;
                 dostuffFactory.editMed(data.data.name, $scope.meds)
             .then((taco) => {
@@ -34,12 +34,17 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
             });
     };
 
-$scope.downloadPDF = () => {
+/*$scope.downloadPDF = () => {
     // console.log("$scope.safeList", $scope.safeList);
-   var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
-   
-        pdfMake.createPdf(docDefinition).download('optionalName.pdf');
+   var docDefinition = { 
+
+        content: 
+
+
     };
+   
+        pdfMake.createPdf(docDefinition).download('MedList.pdf');
+    };*/
 
 
 });

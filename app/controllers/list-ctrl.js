@@ -17,30 +17,44 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 		});
 	};
 
-	$scope.deleteList = function (listId) {
-		listFactory.deleteList(listId)
-		.then( () => {
+
+	$scope.deleteList = function (id) {
+		//console.log("IIIDDDD", id);
+		listFactory.deleteList(id)
+		.then( (data) => {
+			dostuffFactory.getMedsInList(id)
+			.then((medsInList) => {
+				console.log("meds in listttttt:", medsInList);
+				//dostuffFactory.deleteSingleMed(singleMed);
+
+				medsInList.forEach((med) => {
+					console.log("MEDDDDD", med);
+					dostuffFactory.deleteSingleMed(med.id);
+				});
+				
+			});
+			
 			$route.reload();
 		});
 	};
 
-	$scope.deleteListwMeds = function (key) {
-		let theItem = [];
-		let itemDeleting = [];
-		dostuffFactory.getMedsInList(key)
-		.then((item) => {
-			theItem.push(item);
-			theItem.forEach((item) => {
-				itemDeleting.push(item);
-				let uglyId = Object.keys(itemDeleting[0]);
-				uglyId.forEach((item) => {
-					listFactory.deleteListandMeds(item);
-				});
-			});
-		});
-			$location.url("all-lists");
-	};
 
+
+/*$scope.deleteList = function (listId) {
+		listFactory.deleteList(listId)
+		.then( () => {
+			$route.reload();
+		});
+	};*/
+
+
+/*function myFunction() {
+    $window.print();
+}*/
+/*$scope.printStuff = function(){
+	window.print();
+};
+*/
 	showAllLists();
 
 });

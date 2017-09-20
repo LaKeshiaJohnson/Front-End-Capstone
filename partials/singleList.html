@@ -1,12 +1,12 @@
+
 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" ng-model="searchText"><br>
 
 
 <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add Medication</button> 
 
-<div ng-controller="addMedCtrl">
-<button ng-click="downloadPDF()" class="btn btn-default">Download PDF</button></div>
+<button onclick="myFunction()" class="btn btn-default" ng-controller="medCtrl">Print</button>
 <br><br>
-<!-- <a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-plus"></span></a> Add Medication<br><br> -->
+
 
 <center><h1>{{allMedsListNames}}</h1></center>
 
@@ -23,13 +23,11 @@
     <p>Directions: : {{item.directions}}</p>
     <p>Special Notes: {{item.notes}}</p>
     </div>
-
     <footer class="w3-container w3-light-grey">
-      <div><span class="glyphicon glyphicon-remove" ng-click="deleteListwMeds()"></span>
-      <!-- <div><span class="glyphicon glyphicon-remove" ng-click="deleteMed(item.id)"></span> -->
-      <!-- <span class="glyphicon glyphicon-edit" ng-href="#!/meds/:itemId/edit"></span> -->
-          
-          <a ng-href="#!/meds/{{item.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a>
+     
+      <div>
+        <span class="glyphicon glyphicon-remove" ng-click="deleteMed(item.id)"></span>
+        <a ng-href="#!/meds/{{item.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a>
 
       </div>
     </footer>
@@ -79,4 +77,8 @@
   </div>
 </div>
 
-
+<script>
+function myFunction() {
+    window.print();
+}
+</script>

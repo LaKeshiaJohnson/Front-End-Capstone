@@ -38,9 +38,9 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
 		});
 	};
 
-	const deleteList = function(listId) {
+	const deleteList = function(id) {
         return $q((resolve, reject) => {
-            $http.delete(`${FBCreds.databaseURL}/list/${listId}.json`)
+            $http.delete(`${FBCreds.databaseURL}/list/${id}.json`)
                 .then((response) => {
                     resolve(response);
                 })
@@ -92,7 +92,7 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
-    const deleteListandMeds = function(listId){
+   /* const deleteListandMeds = function(listId){
         return $q((resolve, reject) => {
             $http.delete(`{$FBCreds.databaseURL}/meds/${listId}.json`)
             .then((itemObject) => {
@@ -102,7 +102,7 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
                 reject(error);
             });
         });
-    };
+    };*/
 
     return { 
     		getAllLists,
@@ -110,7 +110,6 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
     		deleteList,
     		getListName,
     		getSingleList,
-    		editList,
-            deleteListandMeds
+    		editList
  		};
 });
