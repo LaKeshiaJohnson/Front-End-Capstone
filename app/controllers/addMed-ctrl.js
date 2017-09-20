@@ -23,7 +23,7 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
         //console.log("hmmm...");
         dostuffFactory.addNewMed($scope.meds)
             .then((data) => {
-                console.log("DATA from add med ctrl", data);
+               // console.log("DATA from add med ctrl", data);
                 $scope.meds.id = data.data.name;
                 dostuffFactory.editMed(data.data.name, $scope.meds)
             .then((taco) => {
@@ -34,30 +34,17 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
             });
     };
 
-/*$scope.medsInList = [];
-    const showListwMeds = function () {
-        dostuffFactory.getMedsInList($routeParams.itemId)
-            .then((data) => {
-                $scope.medsInList = data;
-                $scope.medsInList.id = $routeParams.itemId;
-                console.log("itemId", data);
-            })
-            .then(() => {
-                dostuffFactory.getListName($routeParams.itemId)
-                    .then((medsList) => {
-                        $scope.allMedsListNames = medsList;
-                        //console.log("$scope.allMedsListNames", $scope.allMedsListNames);
-                    });
-            });
-    };
+/*$scope.downloadPDF = () => {
+    // console.log("$scope.safeList", $scope.safeList);
+   var docDefinition = { 
 
-    $scope.deleteMed = function(itemId){
-        dostuffFactory.deleteSingleMed(itemId)
-        .then((irrelevant) => {
-            showListwMeds();
-        });
-    };
+        content: 
 
-showListwMeds();*/
+
+    };
+   
+        pdfMake.createPdf(docDefinition).download('MedList.pdf');
+    };*/
+
 
 });

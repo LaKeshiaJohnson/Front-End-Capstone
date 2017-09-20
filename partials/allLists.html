@@ -1,8 +1,14 @@
-<h2>My Lists</h2>
+<center><h1>My Lists</h1></center>
 
 <div ng-repeat="item in list">
-<!-- <p>{{item.title}}</p> -->
-<div class="w3-container w3-white" style="width:100%;"><a ng-href="#!/meds/{{item.id}}">{{item.title}}</a> <span class="glyphicon glyphicon-remove" ng-click="deleteList(item.id)"></span> <a ng-href="#!/list/{{item.id}}/edit">Edit List Name</a></div>
+
+<div class="w3-container w3-white" style="width:100%;"><a ng-href="#!/meds/{{item.id}}">{{item.title}}</a> <br>
+
+
+<!-- DELETE BUTTON -->
+<span class="glyphicon glyphicon-remove" ng-click="deleteList(item.id)"></span>
+
+ <a ng-href="#!/list/{{item.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a></div>
 
 <br>
 </div>

@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 <body>
 	<div ng-include="'partials/nav.html'"></div>
@@ -44,6 +45,8 @@
     <!-- FIREBASE -->
     <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
     <!-- JAVASCRIPTS -->
+    <script src='./lib/bower_components/pdfmake/build/pdfmake.min.js'></script>
+    <script src='./lib/bower_components/pdfmake/build/vfs_fonts.js'></script>
     <script src="./app/app.js"></script>
     <script src="./app/creds/fb-creds.js"></script>
    <!--  FACTORIES -->
@@ -52,7 +55,6 @@
     <script src="./app/factories/list-factory.js"></script>
     <script src="./app/factories/filter-factory.js"></script>
 
-   <!--  <script src="./app/factories/filter-factory.js"></script> -->
     <!-- CONTROLLERS -->
     <script src="./app/controllers/auth-ctrl.js"></script>
     <script src="./app/controllers/nav-ctrl.js"></script>
@@ -63,5 +65,8 @@
     <script src="./app/controllers/editMed-ctrl.js"></script>
     <script src="./app/controllers/editList-ctrl.js"></script>
     <!-- <script src="./app/controllers/showStuff-ctrl.js"></script> -->
+
+    <!-- PDF Maker -->
+    
 </body>
 </html>

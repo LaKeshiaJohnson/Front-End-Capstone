@@ -8,7 +8,7 @@ $scope.medsInList = [];
             .then((data) => {
                 $scope.medsInList = data;
                 $scope.medsInList.id = $routeParams.itemId;
-                console.log("itemId from showMedsInList function:", data);
+                //console.log("showMedsInList:", data);
             })
             .then(() => {
                 listFactory.getListName($routeParams.itemId)
@@ -25,7 +25,26 @@ $scope.medsInList = [];
             showMedsInList();
         });
     };
+ 
+/*
+    $scope.medsInList = [];
+    const getMedKeys = function () {
+        dostuffFactory.getMedsInList(taco)
+        .then ((data) => {
+            medsInList.forEach((item)=> {
+
+            }
+        })
+    }*/
 
 showMedsInList();
+ 
+/*
+$scope.downloadPDF = () => {
+  var docDefinition = { content: $scope.medsInList };
+
+  pdfMake.createPdf(docDefinition).download('MedList.pdf');
+    };
+   */
 
 });

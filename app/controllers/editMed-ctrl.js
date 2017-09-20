@@ -28,7 +28,7 @@ const showEditMed = function(){
         });
 
     };
-showEditMed();
+//showEditMed();
 
             // submit edited medication
     $scope.editThisMed = function(){
@@ -36,8 +36,9 @@ showEditMed();
         dostuffFactory.editMed($routeParams.medId, $scope.meds)
         .then((data) => {
             //$location.url("#!/meds/:itemId");
-            $location.path("#!/meds/:itemid");
+            $location.path("#!/meds/:itemId");
             //$route.reload();
+
 
         });
 

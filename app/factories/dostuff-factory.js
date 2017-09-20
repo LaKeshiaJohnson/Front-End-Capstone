@@ -24,15 +24,14 @@ const getMedsInList = function (listId) {
             $http.get(`${FBCreds.databaseURL}/meds.json?orderBy="listid"&equalTo="${listId}"`)
                 .then((medsList) => {
                     let medsListCollection = medsList.data;
-                    //console.log("meds list data", medsList.data);
-                    let medKeys = Object.keys(medsListCollection);
-                    //console.log("med KEYS", medKeys);
                     //console.log("medsListCollection", medsListCollection);
+                    //let uglyIds =  Object.keys(medsListCollection);
+                    //console.log("ugly IDS", uglyIds);
                     Object.keys(medsListCollection).forEach((key) => {
                         medsListCollection[key].id = key;
                         medsInList.push(medsListCollection[key]);
                     });
-                    //console.log("medsInList", medsInList);
+                    console.log("medsInList!", medsInList);
                     resolve(medsInList);
                 })
                 .catch((error) => {
@@ -42,11 +41,48 @@ const getMedsInList = function (listId) {
     };
 
 
-const getSingleMed = function(itemId){
+/*const deleteMedsandList = function (listId) {
+        //let medsInList = [];
+        //return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/meds.json?orderBy="listid"&equalTo="${listId}"`)
+                .then((medsList) => {
+                    let medsListCollection = medsList.data;
+                    //console.log("medsListCollection", medsListCollection);
+                   let uglyIds =  Object.keys(medsListCollection);
+                   console.log("keys", uglyIds);
+                   uglyIds.forEach((item) => {
+                   $http.delete(`${FBCreds.databaseURL}/meds/${itemId}.json`);
+                   deleteList(listid);
+
+                   });
+            
+                 });
+     }; */          
+
+/*const getSingleMed = function(itemId) {
+        console.log("GET SINGLE MED", itemId);
+        return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/meds.json?&orderBy="listId"&equalTo="${itemId}"`)
+                .then((itemObj) => {
+                    let singleMed = itemObj.data;
+                    console.log("item object single med", singleMed);
+                    resolve(singleMed[Object.keys(singleMed)[0]]);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };*/
+
+const getSingleMed = function(id){
+	console.log("id", id);
         return $q((resolve, reject) =>{
-            $http.get(`${FBCreds.databaseURL}/meds/${itemId}.json`)
+            $http.get(`${FBCreds.databaseURL}/meds/${id}.json`)
             .then((itemObj) => {
-                resolve(itemObj.data);
+            	//console.log("item object", itemObj.data);
+            	let singleMed = itemObj.data;
+            	console.log("SINGLE MED ID", singleMed.id);
+                resolve(singleMed);
             })
             .catch((error) => {
                 reject(error);
@@ -55,6 +91,7 @@ const getSingleMed = function(itemId){
     };
 
     	const deleteSingleMed = function(itemId){
+    		console.log("item id", itemId);
 		return $q((resolve, reject) => {
 			$http.delete(`${FBCreds.databaseURL}/meds/${itemId}.json`)
 			.then((response) => {
@@ -65,6 +102,7 @@ const getSingleMed = function(itemId){
 			});
 		});
 	};
+
 
 	const editMed = function(medId, obj) {
         console.log("id and obj to update", medId, obj);
@@ -80,6 +118,6 @@ const getSingleMed = function(itemId){
         });
     };
 
-return {getMedsInList, addNewMed, getSingleMed, deleteSingleMed, editMed};
+return {getMedsInList, addNewMed, deleteSingleMed, editMed, getSingleMed};
 
 });
