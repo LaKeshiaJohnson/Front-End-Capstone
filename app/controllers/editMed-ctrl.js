@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("editMedCtrl", function($scope, $location, $routeParams, dostuffFactory, authFactory, $route) {
+app.controller("editMedCtrl", function($scope, $location, $routeParams, dostuffFactory, authFactory, $route, $window) {
 
     $scope.title = "Edit Medication";
     $scope.submitButtonText = "Edit";
@@ -22,22 +22,23 @@ const showEditMed = function(){
     //console.log("valid id", $routeParams.itemId);
         dostuffFactory.getSingleMed($routeParams.medId)
         .then((data) => {
-            //console.log("DATA from showEditedMed function:", data);
             $scope.meds = data;
             $scope.meds.id = $routeParams.medId;
         });
 
     };
-//showEditMed();
+
 
             // submit edited medication
     $scope.editThisMed = function(){
         
         dostuffFactory.editMed($routeParams.medId, $scope.meds)
         .then((data) => {
-            //$location.url("#!/meds/:itemId");
-            $location.path("#!/meds/:itemId");
-            //$route.reload();
+            //$location.url("#!/meds/{{itemId}}");
+            //$location.path("#!/meds/:itemId");
+
+            $route.reload();
+            
 
 
         });

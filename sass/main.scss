@@ -2,9 +2,10 @@
     blue #74aedb
  */
 
-body {margin:0;
-background-color: #74aedb ;
-font-family: Arial, Helvetica, sans-serif;
+body {
+    margin:0;
+    background-color: #74aedb ;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -15,13 +16,13 @@ font-family: Arial, Helvetica, sans-serif;
 
 
 main {
-    margin: 80px 0 30px 30px;
+    margin: 80px 0 0 0;
     font-size: 18px;
 }
 
 .navbar-brand {
     margin: 0;
-    padding: 0 0 0px 10px;
+    padding: 0 0 0 10px;
 
 }
 
@@ -36,20 +37,21 @@ main {
     color: black
 }
 
-/*
- #navwrapper {
-    height: 65px;
-    border-bottom: solid 15px #74aedb;
-    position: fixed;
-}
-*/
 
 #addtext{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+w3-container {
+    border: solid 10px black;
+}
+
 .footer {
-background-color: #74aedb;
+    background-color: #74aedb;
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
     
 }
 
