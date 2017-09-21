@@ -1,7 +1,7 @@
 "use strict";
 console.log("app.js is loading");
 
-const app = angular.module("MedsList", ["ngRoute"]);
+const app = angular.module("MedList", ["ngRoute"]);
 
 let isAuth = (authFactory) => new Promise ((resolve, reject) => {
 	authFactory.isAuthenticated()
@@ -42,11 +42,6 @@ app.config(($routeProvider) => {
 		templateUrl: 'partials/addList.html',
 		controller: "addListCtrl",
 		resolve: {isAuth}
-/*	})
-	.when('/list/:itemId/add-med', {
-			templateUrl: 'partials/addMed.html',
-			controller: "addMedCtrl",
-			resolve: {isAuth}*/
 	})
 	.when('/meds/:itemId', {
 		templateUrl: 'partials/singleList.html',

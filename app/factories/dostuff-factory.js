@@ -17,7 +17,7 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
     };
 
 
-const getMedsInList = function (listId) {
+	const getMedsInList = function (listId) {
 
         let medsInList = [];
         return $q((resolve, reject) => {
@@ -41,47 +41,14 @@ const getMedsInList = function (listId) {
     };
 
 
-/*const deleteMedsandList = function (listId) {
-        //let medsInList = [];
-        //return $q((resolve, reject) => {
-            $http.get(`${FBCreds.databaseURL}/meds.json?orderBy="listid"&equalTo="${listId}"`)
-                .then((medsList) => {
-                    let medsListCollection = medsList.data;
-                    //console.log("medsListCollection", medsListCollection);
-                   let uglyIds =  Object.keys(medsListCollection);
-                   console.log("keys", uglyIds);
-                   uglyIds.forEach((item) => {
-                   $http.delete(`${FBCreds.databaseURL}/meds/${itemId}.json`);
-                   deleteList(listid);
-
-                   });
-            
-                 });
-     }; */          
-
-/*const getSingleMed = function(itemId) {
-        console.log("GET SINGLE MED", itemId);
-        return $q((resolve, reject) => {
-            $http.get(`${FBCreds.databaseURL}/meds.json?&orderBy="listId"&equalTo="${itemId}"`)
-                .then((itemObj) => {
-                    let singleMed = itemObj.data;
-                    console.log("item object single med", singleMed);
-                    resolve(singleMed[Object.keys(singleMed)[0]]);
-                })
-                .catch((error) => {
-                    reject(error);
-                });
-        });
-    };*/
-
-const getSingleMed = function(id){
-	console.log("id", id);
+	const getSingleMed = function(id){
+		console.log("id", id);
         return $q((resolve, reject) =>{
             $http.get(`${FBCreds.databaseURL}/meds/${id}.json`)
             .then((itemObj) => {
             	//console.log("item object", itemObj.data);
             	let singleMed = itemObj.data;
-            	console.log("SINGLE MED ID", singleMed.id);
+            	//console.log("SINGLE MED ID", singleMed.id);
                 resolve(singleMed);
             })
             .catch((error) => {

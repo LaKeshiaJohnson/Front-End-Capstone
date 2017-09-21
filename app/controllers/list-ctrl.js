@@ -12,23 +12,21 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 		//console.log("user is: ", authFactory.getCurrentUser());
 		listFactory.getAllLists(user)
 		.then((list) => {
-			console.log("show all user lists:", list);
+			//console.log("show all user lists:", list);
 			$scope.list = list;
 		});
 	};
 
 
 	$scope.deleteList = function (id) {
-		//console.log("IIIDDDD", id);
+		//console.log("ID", id);
 		listFactory.deleteList(id)
 		.then( (data) => {
 			dostuffFactory.getMedsInList(id)
 			.then((medsInList) => {
-				console.log("meds in listttttt:", medsInList);
-				//dostuffFactory.deleteSingleMed(singleMed);
-
+				//console.log("meds in list:", medsInList);
 				medsInList.forEach((med) => {
-					console.log("MEDDDDD", med);
+					//console.log("MED", med);
 					dostuffFactory.deleteSingleMed(med.id);
 				});
 				

@@ -2,26 +2,28 @@
     blue #74aedb
  */
 
-body {margin:0;
-background-color: #74aedb ;
-font-family: Arial, Helvetica, sans-serif;
+body {
+    margin:0;
+    background-color: #74aedb ;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 #logo {
     
     text-align: center;
-}
+    }
+
 
 
 main {
-    margin: 80px 0 30px 30px;
+    margin: 80px 0 0 0;
     font-size: 18px;
 }
 
 .navbar-brand {
     margin: 0;
-    padding: 0 0 0px 10px;
+    padding: 0 0 0 10px;
 
 }
 
@@ -36,20 +38,17 @@ main {
     color: black
 }
 
-/*
- #navwrapper {
-    height: 65px;
-    border-bottom: solid 15px #74aedb;
-    position: fixed;
-}
-*/
 
 #addtext{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 .footer {
-background-color: #74aedb;
+    background-color: #74aedb;
+    margin-top: 20px;
+
     
 }
 
