@@ -1,4 +1,4 @@
-<center><h1>My Lists</h1></center>
+<center><h1>Medication Lists</h1></center>
 
 <div ng-repeat="item in list">
 
@@ -8,6 +8,7 @@
 <!-- DELETE BUTTON -->
 <span class="glyphicon glyphicon-remove" ng-click="deleteList(item.id)"></span>
 
+<!-- EDIT BUTTON -->
  <a ng-href="#!/list/{{item.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a></div>
 
 <br>
