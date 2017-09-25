@@ -2,7 +2,7 @@
 
 //console.log("list controller loading");
 
-app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, dostuffFactory, filterFactory, $location) {
+app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, dostuffFactory, filterFactory, $location, $window) {
 	$scope.list = [];
 	let user = authFactory.getCurrentUser();
 	//$rootScope.showSearch = true;
@@ -37,14 +37,10 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 	};
 
 
-
-/*function myFunction() {
-    $window.print();
-}*/
-/*$scope.printStuff = function(){
-	window.print();
+$scope.print = function(){
+	$window.print();
 };
-*/
+
 	showAllLists();
 
 });

@@ -4,7 +4,7 @@
 
 <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add Medication</button> 
 
-<button onclick="myFunction()" class="btn btn-default" ng-controller="medCtrl">Print</button>
+<button ng-click="print()" class="btn btn-default" ng-controller="listCtrl">Print</button>
 <br><br>
 
 
@@ -77,8 +77,8 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
 function myFunction() {
     window.print();
 }
-</script>
+</script> -->
