@@ -24,9 +24,6 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
             $http.get(`${FBCreds.databaseURL}/meds.json?orderBy="listid"&equalTo="${listId}"`)
                 .then((medsList) => {
                     let medsListCollection = medsList.data;
-                    //console.log("medsListCollection", medsListCollection);
-                    //let uglyIds =  Object.keys(medsListCollection);
-                    //console.log("ugly IDS", uglyIds);
                     Object.keys(medsListCollection).forEach((key) => {
                         medsListCollection[key].id = key;
                         medsInList.push(medsListCollection[key]);

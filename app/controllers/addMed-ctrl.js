@@ -20,7 +20,6 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
     };
 
     $scope.submitMed = function() {
-        //console.log("hmmm...");
         dostuffFactory.addNewMed($scope.meds)
             .then((data) => {
                // console.log("DATA from add med ctrl", data);
@@ -33,18 +32,5 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
                 
             });
     };
-
-/*$scope.downloadPDF = () => {
-    // console.log("$scope.safeList", $scope.safeList);
-   var docDefinition = { 
-
-        content: 
-
-
-    };
-   
-        pdfMake.createPdf(docDefinition).download('MedList.pdf');
-    };*/
-
 
 });

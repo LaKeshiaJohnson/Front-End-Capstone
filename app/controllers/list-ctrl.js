@@ -36,7 +36,7 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 		});
 	};
 
-
+//print single med list
 $scope.print = function(){
 	$window.print();
 };

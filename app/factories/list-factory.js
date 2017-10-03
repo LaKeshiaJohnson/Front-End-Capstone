@@ -92,17 +92,6 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
-   /* const deleteListandMeds = function(listId){
-        return $q((resolve, reject) => {
-            $http.delete(`{$FBCreds.databaseURL}/meds/${listId}.json`)
-            .then((itemObject) => {
-                resolve(itemObject);
-            })
-            .catch((error) => {
-                reject(error);
-            });
-        });
-    };*/
 
     return { 
     		getAllLists,
