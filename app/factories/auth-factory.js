@@ -1,4 +1,4 @@
-//Auth Factory handles firbsse calls for authentication. Login/register with email/password and login with Google
+//Auth Factory handles firebase calls for authentication. Login/register with email/password and login with Google
 
 "use strict";
 
