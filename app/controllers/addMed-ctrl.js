@@ -22,7 +22,7 @@ app.controller("addMedCtrl", function($scope, $location, $routeParams, dostuffFa
     $scope.submitMed = function() {
         dostuffFactory.addNewMed($scope.meds)
             .then((data) => {
-               // console.log("DATA from add med ctrl", data);
+                //console.log("DATAAAAA from add med ctrl", data);
                 $scope.meds.id = data.data.name;
                 dostuffFactory.editMed(data.data.name, $scope.meds)
             .then((taco) => {

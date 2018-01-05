@@ -37,7 +37,6 @@ const showEditMed = function(){
         .then((data) => {
             //$location.url("#!/meds/{{itemId}}");
             //$location.path("#!/meds/:itemId");
-
             $route.reload();
             
 

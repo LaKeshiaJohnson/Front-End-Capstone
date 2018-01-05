@@ -2,6 +2,7 @@
 
 app.controller("medCtrl", function ($scope, $routeParams, dostuffFactory, listFactory, $route, $q, $http, FBCreds) {
 
+//singleList.html
 $scope.medsInList = [];
     const showMedsInList = function () {
         dostuffFactory.getMedsInList($routeParams.itemId)

@@ -2,7 +2,6 @@
 
 app.controller("authCtrl", function ($scope, $window, authFactory, $location) {
 
-//console.log("auth controller has loaded");
 $scope.account = {
 	email: "",
 	password: ""

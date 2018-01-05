@@ -1,18 +1,24 @@
+<!-- Shows all the lists a user has created. Uses list-ctrl.js -->
+
 <center><h1>Medication Lists</h1></center>
 
 
 <div ng-repeat="item in list">
 
-<div class="w3-container w3-white" style="width:100%;"><a ng-href="#!/meds/{{item.id}}">{{item.title}}</a> <br>
+	<center>
+		<!-- Links to all the medications in a particular list -->
+		<div class="w3-container w3-white" style="width:80%;"><a ng-href="#!/meds/{{item.id}}">{{item.title}}</a> <br>
 
 
-<!-- DELETE BUTTON -->
-<span class="glyphicon glyphicon-remove" ng-click="deleteList(item.id)"></span>
+		<!-- DELETE BUTTON -->
+		<span class="glyphicon glyphicon-remove" ng-click="deleteList(item.id)"></span>
 
-<!-- EDIT BUTTON -->
- <a ng-href="#!/list/{{item.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a></div>
+		<!-- EDIT BUTTON -->
+ 		<a ng-href="#!/list/{{item.id}}/edit"><span class="glyphicon glyphicon-edit"></span></a>
 
-<br>
+ 		</div>
+ 	</center>
+	<br>
 </div>
 
  

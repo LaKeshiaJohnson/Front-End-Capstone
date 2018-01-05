@@ -1,34 +1,34 @@
+<!-- Form to edit the details of a medication. Uses editMed-ctrl.js -->
+
 <div class="forms">
-<h3>{{title}}</h3>
+  <h3>{{title}}</h3>
 
-
-<form>
-  <div class="form-row">
+  <form>
     <div class="form-group">
-      <input type="input" class="form-control" id="" ng-model="meds.medname" placeholder="">
+      <input type="input" class="form-control" id="" ng-model="meds.medname">
     </div>
+
     <div class="form-group">
       <input type="input" class="form-control" id="" ng-model="meds.dose">
     </div>
-  </div>
-  <div class="form-row">
+
     <div class="form-group">
       <input type="input" class="form-control" id="" ng-model="meds.prescribedby">
     </div>
+
     <div class="form-group">
       <input type="input" class="form-control" id="" ng-model="meds.reason">
     </div>
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="" ng-model="meds.directions">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="" ng-model="meds.notes">
-  </div>
+    
+    <div class="form-group">
+      <input type="text" class="form-control" id="" ng-model="meds.directions">
+    </div>
+    
+    <div class="form-group">
+      <input type="text" class="form-control" id="" ng-model="meds.notes">
+    </div>
   
-  
-  <button class="btn btn-primary" ng-click="editThisMed()">{{submitButtonText}}</button>
-</form>
-
+    <button class="btn btn-primary" ng-click="editThisMed()">{{submitButtonText}}</button>
+  </form>
 </div>
 
