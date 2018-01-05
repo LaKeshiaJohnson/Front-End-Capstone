@@ -3,6 +3,7 @@ console.log("app.js is loading");
 
 const app = angular.module("MedList", ["ngRoute"]);
 
+//checking to see if user is authenticated
 let isAuth = (authFactory) => new Promise ((resolve, reject) => {
 	authFactory.isAuthenticated()
 	.then( (userExists) => {
@@ -51,6 +52,11 @@ app.config(($routeProvider) => {
 	.when('/meds/:medId/edit', {
 		templateUrl: 'partials/editmed.html',
 		controller: "editMedCtrl",
+		resolve: {isAuth}
+	})
+	.when('/add-med', {
+		templateUrl: 'partials/addMed.html',
+		controller: "addMedCtrl",
 		resolve: {isAuth}
 	})
 	.otherwise('/');

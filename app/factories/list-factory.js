@@ -1,8 +1,11 @@
+//handles firebase calls for medication lists
 "use strict";
 //console.log("list factory is loading");
 
 app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
 
+//call to firebase to get all lists a user has created
+//called from list-ctrl.js
 	const getAllLists = function(user) {
         let list = [];
         return $q((resolve, reject) => {
@@ -25,6 +28,8 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
+//adds a new list to firebase
+//called from addList-ctrl.js
     const addNewList = function(obj) {
 		let newObj = JSON.stringify(obj);
 		return $http.post(`${FBCreds.databaseURL}/list.json`, newObj)
@@ -38,6 +43,8 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
 		});
 	};
 
+//removes a medication list from firebase
+//called from list-ctrl.js
 	const deleteList = function(id) {
         return $q((resolve, reject) => {
             $http.delete(`${FBCreds.databaseURL}/list/${id}.json`)
@@ -50,6 +57,8 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
+//gets the name of a particular medication list
+//called from med-ctrl.js and used in the singleList.html view
     	const getListName = function(listId) {
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/list/${listId}.json`)
@@ -65,7 +74,8 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
                 });
         });
     };
-
+//call to firebase to get a particular list
+//called from editList-ctrl.js
     const getSingleList = function(itemId){
         return $q((resolve, reject) =>{
             $http.get(`${FBCreds.databaseURL}/list/${itemId}.json`)
@@ -78,6 +88,8 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
+//edit a particualr list name in firebase
+//called from editList-ctrl.js
      const editList = function(id, obj) {
         console.log("id and obj to update", id, obj);
         return $q((resolve, reject) => {
@@ -92,17 +104,6 @@ app.factory("listFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
-   /* const deleteListandMeds = function(listId){
-        return $q((resolve, reject) => {
-            $http.delete(`{$FBCreds.databaseURL}/meds/${listId}.json`)
-            .then((itemObject) => {
-                resolve(itemObject);
-            })
-            .catch((error) => {
-                reject(error);
-            });
-        });
-    };*/
 
     return { 
     		getAllLists,

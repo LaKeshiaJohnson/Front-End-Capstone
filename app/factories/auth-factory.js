@@ -1,3 +1,5 @@
+//Auth Factory handles firebase calls for authentication. Login/register with email/password and login with Google
+
 "use strict";
 
 app.factory("authFactory", function ($q, $http, FBCreds) {
@@ -21,6 +23,7 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
 		});
 	};
 
+    //gets current user
 	const getCurrentUser = function() {
 	return currentUser;
 	};
@@ -29,6 +32,7 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
 		return addNewUserObj;
 	};
 
+    //login with e-mail and password
 	const logIn = function (userObj) {
         return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
             .catch(function (error) {
@@ -43,6 +47,7 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
         return firebase.auth().signOut();
     };
 
+    //register with e-mail and password
     const register = function (userObj) {
         return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
         .then(function addNewUser(userObj){
@@ -71,14 +76,21 @@ app.factory("authFactory", function ($q, $http, FBCreds) {
             });
     };
 
+    //login with Google
     let provider = new firebase.auth.GoogleAuthProvider();
 
     let authWithProvider = function () {
         return firebase.auth().signInWithPopup(provider);
     };
 
-    return {getCurrentUser, logIn, logOut, register, isAuthenticated, authWithProvider, getUserInfo};
-        
-
+    return {
+            getCurrentUser, 
+            logIn, 
+            logOut, 
+            register, 
+            isAuthenticated, 
+            authWithProvider, 
+            getUserInfo
+        };
 
 });

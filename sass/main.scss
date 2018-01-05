@@ -1,5 +1,6 @@
-/* red #d76b73
-    blue #74aedb
+/* 
+red #d76b73
+blue #74aedb
  */
 
 body {
@@ -17,7 +18,7 @@ body {
 
 
 main {
-    margin: 80px 0 0 0;
+    margin: 100px 0 0 0;
     font-size: 18px;
 }
 
@@ -58,4 +59,39 @@ main {
     font-weight: normal;
     text-align: center;
 
+}
+
+.forms {
+    background-color: white;
+    padding: 10px;
+}
+
+header.w3-container.w3-light-grey {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
+}
+
+div.w3-container.w3-white {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+}
+
+footer.w3-container.w3-light-grey {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
+}
+
+a.ng-binding {
+    text-decoration: none;
+}
+
+a.active {
+    background-color: #d76b73;
+    color: black
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.forms.ng-scope {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 }

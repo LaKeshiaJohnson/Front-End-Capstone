@@ -17,7 +17,7 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 		});
 	};
 
-
+//delete list and all the medications associated with that list
 	$scope.deleteList = function (id) {
 		//console.log("ID", id);
 		listFactory.deleteList(id)
@@ -36,7 +36,7 @@ app.controller("listCtrl", function ($scope, $route, authFactory, listFactory, d
 		});
 	};
 
-
+//print single med list
 $scope.print = function(){
 	$window.print();
 };

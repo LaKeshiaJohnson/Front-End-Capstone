@@ -1,8 +1,11 @@
+//dostuff factory handles firebase calls for medications
+
 "use strict";
-//console.log("do stuff factory is loading");
 
 app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 
+//adding a new medication to firebase. 
+//called from addMed-ctrl.js
     const addNewMed = function(obj) {
         let newObj = JSON.stringify(obj);
         return $http.post(`${FBCreds.databaseURL}/meds.json`, newObj)
@@ -16,17 +19,15 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
             });
     };
 
-
+//Call to firebase to get all of the medications in a particular/single list
+//called from med-ctrl.js
+//Each med has a med id and a list id. Want to get all the meds with the list id of the current list. 
 	const getMedsInList = function (listId) {
-
         let medsInList = [];
         return $q((resolve, reject) => {
             $http.get(`${FBCreds.databaseURL}/meds.json?orderBy="listid"&equalTo="${listId}"`)
                 .then((medsList) => {
                     let medsListCollection = medsList.data;
-                    //console.log("medsListCollection", medsListCollection);
-                    //let uglyIds =  Object.keys(medsListCollection);
-                    //console.log("ugly IDS", uglyIds);
                     Object.keys(medsListCollection).forEach((key) => {
                         medsListCollection[key].id = key;
                         medsInList.push(medsListCollection[key]);
@@ -40,9 +41,10 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
-
+//call to firebase to get a single medication. aused in editing med.
+//called from editMed-ctrl.js
 	const getSingleMed = function(id){
-		console.log("id", id);
+		//console.log("id", id);
         return $q((resolve, reject) =>{
             $http.get(`${FBCreds.databaseURL}/meds/${id}.json`)
             .then((itemObj) => {
@@ -57,6 +59,8 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
         });
     };
 
+//Deleting a single medication from firebase
+//called from med-ctrl.js
     	const deleteSingleMed = function(itemId){
     		console.log("item id", itemId);
 		return $q((resolve, reject) => {
@@ -70,7 +74,8 @@ app.factory("dostuffFactory", function(FBCreds, authFactory, $q, $http) {
 		});
 	};
 
-
+//editing med info that's in firebase
+//called from editMed-ctrl.js
 	const editMed = function(medId, obj) {
         console.log("id and obj to update", medId, obj);
         return $q((resolve, reject) => {

@@ -15,7 +15,7 @@ app.controller("addListCtrl", function($scope, listFactory, authFactory, $locati
 	$scope.submitList = function () {
 		listFactory.addNewList($scope.list)
 			.then((data) => {
-				$location.url("/all-lists"); //"#!""
+				$location.url("/all-lists");
 				//$route.reload();
 			});
 	};

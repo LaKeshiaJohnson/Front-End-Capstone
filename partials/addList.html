@@ -1,28 +1,19 @@
-<h3>{{title}}</h3>
+<!-- Form to add a new list. Uses addList-ctrl.js -->
 
-<form>
-	<div class="form-group row">
+<div class="forms">
+  <h3>{{title}}</h3>
+
+  <form>
+	 <div class="form-group row">
       <div class="col-md-6">
-    <label for="title">List Title:</label>
+        <label for="title">List Title:</label>
         <input type="text" class="form-control" id="listname" ng-model="list.title">
       </div>
       <br>
-      <button ng-click="submitList()" class="btn btn-default">{{submitButtonText}}</button>
-  </div>
- </form>
-       
-       <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      
-      <div class="modal-body">
-      <h5 class="modal-title">{{title}}</h5>
-      <form>
-       <label for="title">List Title:</label>
-        <input type="text" class="form-control" id="listname" ng-model="list.title">
-     
-       	<button ng-click="submitList()" class="btn btn-default">{{submitButtonText}}</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      <div>
+        <button ng-click="submitList()" class="btn btn-primary">{{submitButtonText}}</button>
       </div>
-      </form>
- -->
+    </div>
+ </form>
+<div>      

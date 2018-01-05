@@ -18,6 +18,7 @@ app.controller("editMedCtrl", function($scope, $location, $routeParams, dostuffF
         listid: $routeParams.medId,
 
     };
+    
 const showEditMed = function(){
     //console.log("valid id", $routeParams.itemId);
         dostuffFactory.getSingleMed($routeParams.medId)
@@ -36,7 +37,6 @@ const showEditMed = function(){
         .then((data) => {
             //$location.url("#!/meds/{{itemId}}");
             //$location.path("#!/meds/:itemId");
-
             $route.reload();
             
 
