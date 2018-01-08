@@ -2,6 +2,8 @@
 
 Med List is an app that allows users to keep track of medications by creating med lists. Lists contain medication name, along with pertinent information about the medication such as dosage, directions for use, and special notes.
 
+Med List is now live. See the deployed site [HERE](https://capstone-39282.firebaseapp.com)
+
 ## Getting Started
 
 This project uses Angular JS, Firebase, and Grunt.
