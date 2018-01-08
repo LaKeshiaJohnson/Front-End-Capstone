@@ -54,11 +54,11 @@ app.config(($routeProvider) => {
 		controller: "editMedCtrl",
 		resolve: {isAuth}
 	})
-	/*.when('/add-med', {
-		templateUrl: 'partials/addMed.html',
-		controller: "addMedCtrl",
+	.when('/about', {
+		templateUrl: 'partials/about.html',
+		controller: "authCtrl",
 		resolve: {isAuth}
-	})*/
+	})
 	.otherwise('/');
 });
 
